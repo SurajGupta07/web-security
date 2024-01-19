@@ -3,6 +3,15 @@ const express = require("express");
 const PORT = 3020;
 const app = express();
 
+app.use((req, res, next) => {
+  res.setHeader(
+    "Content-Security-Policy",
+    "default-src 'self';" +
+      "script-src 'self' 'unsafe-inline' https://unsecure.com;"
+  );
+  next();
+});
+
 app.use(express.static("public"));
 
 app.get("/", (req, res) => {
