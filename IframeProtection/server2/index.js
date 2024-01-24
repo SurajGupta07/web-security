@@ -24,7 +24,7 @@ app.get("/iframe-webiste2", (req, res) => {
   res.sendFile(__dirname + "/public/iframe-webiste2.html");
 });
 
-const port = process.env.PORT || 5011;
+const port = 5011;
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
